@@ -2,6 +2,7 @@ package com.drools;
 
 import org.kie.api.KieServices;
 import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieContainerSessionsPool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -19,5 +20,14 @@ public class BasicDroolsApplication {
 		KieContainer kc = ks.getKieClasspathContainer();
 		
 		return kc;
+	}
+	
+	@Bean
+	public KieContainerSessionsPool myPoolKie() {
+		KieServices ks = KieServices.get();
+		KieContainer kc = ks.getKieClasspathContainer();
+		KieContainerSessionsPool pool = kc.newKieSessionsPool(2);
+		
+		return pool;
 	}
 }

@@ -1,0 +1,21 @@
+package rules.mediaAluno
+
+import com.drools.model.AlunoModel;
+
+rule "AlunoAprovado"
+	when
+		aluno : AlunoModel(mediaAluno >= 7)
+	then
+		modify (aluno) {
+			setStatusAluno("Aprovado");
+		}
+end
+
+rule "AlunoReprovado"
+	when
+		aluno : AlunoModel(mediaAluno < 7)
+	then
+		modify (aluno) {
+			setStatusAluno("Reprovado");
+		}
+end

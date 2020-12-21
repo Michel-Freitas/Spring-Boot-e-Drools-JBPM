@@ -6,6 +6,10 @@
          	<ksession name="idadePermitida"></ksession>
          </kbase>
          
+         <kbase name="statusMediaAluno" packages="rules.mediaAluno">
+         	<ksession name="statusMediaAluno"></ksession>
+         </kbase>
+         
          
 
 </kmodule>
