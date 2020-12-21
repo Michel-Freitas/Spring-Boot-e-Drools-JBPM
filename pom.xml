@@ -29,6 +29,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- Drools -->
+		<dependency>
+		    <groupId>org.kie</groupId>
+		    <artifactId>kie-ci</artifactId>
+		    <version>7.47.0.Final</version>
+		</dependency>
+		
 	</dependencies>
 
 	<build>

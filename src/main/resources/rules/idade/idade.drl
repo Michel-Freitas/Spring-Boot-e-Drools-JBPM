@@ -1,0 +1,17 @@
+package rules.idade
+
+import com.drools.model.PessoaModel;
+
+rule "IdadePermitida"
+	when
+		pessoa : PessoaModel(idade >= 18)
+	then
+		System.out.println("Pode Acessar");
+end
+
+rule "IdadeProibida"
+	when
+		pessoa : PessoaModel(idade < 18)
+	then
+		System.out.println("Não pode acessar");
+end
